@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -20,10 +20,8 @@ requirements:
     - python >=3.7
     - reentry
   run:
-    - aiida-core >=1.0.0,<2.0.0
+    - aiida-core.atomic_tools >=1.0.0,<2
     - cclib
-    # pandas has broken builds: https://github.com/conda-forge/pandas-feedstock/issues/137
-    - pandas !=1.4.0,!=1.4.1,!=1.4.2
     - python >=3.7
 
 test:
