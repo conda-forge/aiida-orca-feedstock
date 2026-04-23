@@ -1,18 +1,18 @@
 {% set name = "aiida-orca" %}
-{% set version = "0.5.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiida-orca-{{ version }}.tar.gz
-  sha256: 6cda668213376e44a29aacb197f2915d8fcc9e3394372b7029a3030432c7f8d1
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: b17ef20197da61462c04ca74c3f120dd2827ec9d777e003c71ba0452640284f7
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
